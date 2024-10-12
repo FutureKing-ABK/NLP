@@ -1,0 +1,44 @@
+plugins {
+    id 'org.springframework.boot' version '3.1.0'  // Spring Boot 3.x
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+}
+
+group = 'com.example'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '19' // Set source compatibility to Java 19
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Web Starter
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Stanford NLP Dependency
+    implementation 'edu.stanford.nlp:stanford-corenlp:4.5.1'
+    implementation 'edu.stanford.nlp:stanford-corenlp:4.5.1:models'
+
+    // JAXB dependencies required for Java 11+ (including Java 19)
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.1'
+
+    // Lombok (Optional)
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // Spring Boot Test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+java {
+    // Set the toolchain to use Java 19
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(19)
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
