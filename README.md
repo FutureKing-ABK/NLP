@@ -118,7 +118,7 @@ This API can be used for:
 To run this application:
 1. Clone the repository.
 2. Ensure you have **Java 8+** and **Spring Boot** installed.
-3. Run the application with `mvn spring-boot:run` or via your IDE.
+3. Run the application with `./gradlew bootRun` or via your IDE.
 4. Use Postman or Curl to send POST requests to the `/process-command` endpoint.
 
 ## Conclusion
